@@ -1,0 +1,12 @@
+A spurious wakeup occurs in multithreading when a thread waiting for a specific condition to become true is awoken from its waiting state even though no other thread explicitly notified it and the condition it was waiting for has not been met.
+
+"Imagine a group of workers in a break room waiting for a delivery truck to arrive. They have a rule: 'Stay asleep until the delivery guy knocks.'
+In a perfect world, they only wake up when the delivery guy actually knocks.
+A spurious wakeup is like someone in the break room waking up because of a loud noise outside—maybe a regular car backfired, or a door slammed—not because the delivery truck arrived. They woke up, but the condition they were waiting for hasn't actually happened yet.
+The Core "Reason" (Simplified)
+The main reason this happens is the way operating systems are built:
+Efficiency over Certainty: It is simpler and faster for the operating system to sometimes wake up a sleeping thread due to general system noise (like a timer interrupt or a different internal signal) than to ensure every single wake-up signal is perfectly aligned with the exact condition your program is waiting for.
+The OS doesn't know your logic: The operating system just manages sleeping and waking threads; it doesn't understand the specific condition your application logic is waiting for (e.g., "is the queue empty?").
+The Interview-Ready Solution
+The important takeaway for an interviewer is that you know how to handle this possibility:
+"Because we can't trust the reason for waking up, we always treat a wake-up as a hint to go check the condition again. We don't assume the condition is met. That's why in multithreading, we always put our wait() calls inside a while loop, never an if statement, to re-verify the shared state."

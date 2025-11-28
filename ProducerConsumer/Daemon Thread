@@ -5,3 +5,6 @@ Topics:
     examples: Garbage collector
               Autosave feature
               Logging
+
+
+4. Synchronized keyword is responsible to place monitored lock on the object of that class. 

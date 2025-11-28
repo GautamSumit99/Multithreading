@@ -9,3 +9,5 @@ Topics:
 
 4. Synchronized keyword is responsible to place monitored lock on the object of that class. 
 5. Whereas custom locks(eg: Reentrant, read write, semaphore stamped) do not depend on object.
+        Meaning: Rather than depending on the sharedResource object. Locking depends on the lock object.
+            Even if there are multiple resource object, if a single lock object is passed in both of them. Only one critical section would be accessed one at a time.

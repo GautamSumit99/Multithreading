@@ -8,3 +8,4 @@ Topics:
 
 
 4. Synchronized keyword is responsible to place monitored lock on the object of that class. 
+5. Whereas custom locks(eg: Reentrant, read write, semaphore stamped) do not depend on object.

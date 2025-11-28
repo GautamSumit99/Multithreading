@@ -1,0 +1,7 @@
+Topics:
+1. Stop , Suspend, Resume : these are deprecated methods
+2. Thread priority : 1 - 10
+3. Daemon Thread:
+    examples: Garbage collector
+              Autosave feature
+              Logging

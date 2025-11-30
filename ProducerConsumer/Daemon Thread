@@ -1,0 +1,63 @@
+Topics:
+1. Stop , Suspend, Resume : these are deprecated methods
+2. Thread priority : 1 - 10
+3. Daemon Thread:
+    examples: Garbage collector
+              Autosave feature
+              Logging
+
+
+4. Synchronized keyword is responsible to place monitored lock on the object of that class. 
+5. Whereas custom locks(eg: Reentrant, read write, semaphore stamped) do not depend on object.
+        Meaning: Rather than depending on the sharedResource object. Locking depends on the lock object.
+            Even if there are multiple resource object, if a single lock object is passed in both of them. Only one critical section would be accessed one at a time.
+
+
+
+                        First Classification of locks: 
+                         1) Shared Lock
+                         2) Exclusive Lock
+
+
+
+Types of Locks:
+1) Reentrant Lock: 
+
+2) ReadWrite Lock Provides: 
+        a) Read Lock: sharedLock
+        b) Write Lock: exclusive Lock
+
+    This lock is suggested in the scenarios where there are high read and less writes.
+
+                        Second Classification of locks: 
+                        1) Pessimistic Lock ( shared and exclusive)
+                        2) Optimistic Lock  (no lock acquired)
+                             Whenever we read a data we maintain a version of that data.
+                             While updating the same data, if version mismatches the operation
+                             rolls back.
+
+
+
+3) Stamped Locks Provides:
+        a) Read/ Write lock
+        b) Optimistic lock
+
+4) Semaphore Lock: 
+    Allows a particular thread to go inside a critical section. But there is a permit(count eg: 2)
+    meaning only 2 threads can acquire the lock at the same time. 
+
+        Scenarios: 
+        1) There are 2 printers: So we can only allow at max two print request parallely.
+        2) Connection Pools: Connection pool defines 5 connections at max.
+
+
+
+Inter-thread communication:  
+ While using synchronized > it puts a monitored lock > we have wait() and notify() which works.
+    So threads can communicate with each other.
+
+With custom locks in picture we cannot use wait() and notify(). That's why we have CONDITIONS: 
+
+await() = wait()
+signal() = notify()
+signalAll() = notifyAll()

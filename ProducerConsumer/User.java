@@ -38,4 +38,21 @@ public class User {
 
 	}
 
+		/*
+0 Produced
+1 Produced
+2 Produced
+Buffer full
+0 consumed
+1 consumed
+2 consumed
+Buffer empty
+3 Produced
+4 Produced
+5 Produced
+3 consumed
+4 consumed
+5 consumed
+	 */
+
 }

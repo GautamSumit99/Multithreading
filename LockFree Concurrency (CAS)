@@ -1,0 +1,36 @@
+CAS (compare and swap)
+
+Its is similar to optimistic locking but a low level operation works in side CPU.
+Where optmistic lock work on db level.
+Its atomic and is an operation of CPU.
+
+3 main components:
+  1. Memory
+  2. Expected value
+  3. New value
+
+ABA problem: 
+ value = 10 t1 and t2 workin on it. t1 has expected value 10.
+now memory get updated to 12 and then t3 changes back to 10 again.
+Now for t1 operation memory and expected values are same so it updates the memory with new value.
+
+
+it is resolved using a version no. OR timestamp.
+
+    int a = 19;
+    a++;  > it is not an atomic operation
+
+    It has three steps: 
+    load a
+    increament a 
+    assign value to a again.
+
+    AtomicInteger 
+    AtomicBoolean
+    AtomicLong
+   all these 3 make use of compare and swap.
+
+  Atomic can be use in a case when there are these 3 operations
+  READ MODIFY UPDATE
+
+  

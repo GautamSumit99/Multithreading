@@ -1,0 +1,10 @@
+What is threadPool ? 
+
+-Collection of threads which are available to perform submitted tasks.
+-Once task completes worker thread comes back to thread pool and wait for
+next task to assigned.
+-Threads can be reused.
+
+When application submits new task.
+It asks:-
+1. is thread available ? 
